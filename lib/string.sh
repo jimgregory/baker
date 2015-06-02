@@ -6,7 +6,7 @@ trim() {
 
 # convert string to hook
 slug() {
-    tr -cd '[:alnum:][:space:]' <<< "$*" | tr -s '[:space:]' - | tr '[:upper:]' '[:lower:]'
+    tr -cd '[:alnum:][:space:]' <<< "$*" | tr -s '[:space:]' - | tr '[:upper:]' '[:lower:]' | sed -e 's|-$||'
 }
 
 html_escape() {
